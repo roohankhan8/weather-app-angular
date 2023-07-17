@@ -1,25 +1,24 @@
 <div class="mycontainer">
-  <div class="card p-2" style="width: 18rem">
+  <div class="card p-2 m-1 shadow-lg" style="width: 18rem; background-color: #cfd8fc; color:#010618;">
     <div class="d-flex" role="search">
       <input
         [(ngModel)]="city"
-        class="form-control me-2"
+        class="form-control me-2 hover-shadow"
         type="search"
         placeholder="Search"
         aria-label="Search"
       />
       <button
-        class="btn btn-outline-success"
+        class="btn hover-shadow" style="background-color: #082082; color:#cfd8fc;"
         type="submit"
         (click)="ngOnInit()"
       >
         Search
       </button>
     </div>
-    <div class="d-flex flex-row justify-content-around">
-      <div class="form-check">
+    <div class="d-flex flex-row justify-content-around p-2">
+      <div class="form-check" [(ngModel)]="units" (change)="handleOptionChange('imperial')">
         <input 
-        [(ngModel)]="units" (change)="handleOptionChange('imperial')"
           class="form-check-input"
           type="radio"
           name="flexRadioDefault"
@@ -29,9 +28,8 @@
           Farenheit
         </label>
       </div>
-      <div class="form-check">
+      <div class="form-check" [(ngModel)]="units" (change)="handleOptionChange('metric')">
         <input
-        [(ngModel)]="units" (change)="handleOptionChange('metric')"
           class="form-check-input"
           type="radio"
           name="flexRadioDefault"
@@ -47,7 +45,7 @@
       src="{{ icon }}"
       class="card-img-top"
       alt="..."
-      style="width: 18rem; height: 18rem"
+      style="width: 17rem; height: 17rem"
     />
     <div class="card-body text-center">
       <h2 class="card-title">{{ name }}</h2>
